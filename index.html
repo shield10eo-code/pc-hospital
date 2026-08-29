@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مستشفى الكمبيوتر - صيانة وتجميع في القاهرة</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 1. الهيرو -->
+    <header class="hero">
+        <div class="hero-text">
+            <h1>مستشفى الكمبيوتر</h1>
+            <p>بنرجع جهازك جديد في خلال 24 ساعة. ضمان 3 شهور على كل الصيانة</p>
+            <a href="#order" class="btn-main">اطلب صيانة دلوقتي</a>
+        </div>
+        <div class="hero-img">
+            <img src="pc1.jpeg" alt="صيانة كمبيوتر">
+        </div>
+    </header>
+
+    <!-- 2. الخدمات -->
+    <section class="services">
+        <h2>خدماتنا</h2>
+        <div class="service-grid">
+            <div class="card">
+                <img src="pc2.jpeg" alt="صيانة">
+                <h3>صيانة لابتوب و PC</h3>
+                <p>هاردوير + سوفت وير + تنظيف + تغيير معجون</p>
+            </div>
+            <div class="card">
+                <img src="pc3.jpeg" alt="تجميع">
+                <h3>تجميع كمبيوتر جيمنج</h3>
+                <p>بنرشحلك افضل قطع حسب ميزانيتك ونركبها</p>
+            </div>
+            <div class="card">
+                <img src="pc4.jpeg" alt="منتجات">
+                <h3>بيع قطع واكسسوارات</h3>
+                <p>كيبورد جيمنج - ماوس - شاشات - رامات - SSD</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. ليه احنا -->
+    <section class="why-us">
+        <h2>ليه تختارنا؟</h2>
+        <div class="why-grid">
+            <div><span>⚡</span><p>سرعة في التنفيذ خلال 24 ساعة</p></div>
+            <div><span>🛡️</span><p>ضمان 3 شهور على الصيانة</p></div>
+            <div><span>💰</span><p>افضل سعر في القاهرة</p></div>
+        </div>
+    </section>
+
+    <!-- 4. الفورم -->
+    <section id="order" class="order">
+        <h2>اطلب صيانة او تجميعة</h2>
+        <form id="orderForm">
+            <input type="text" id="name" placeholder="الاسم" required>
+            <input type="tel" id="phone" placeholder="رقم الواتساب" required>
+            <select id="service" required>
+                <option value="">اختار الخدمة</option>
+                <option value="تصليح لابتوب">تصليح لابتوب</option>
+                <option value="تجميع كمبيوتر">تجميع كمبيوتر</option>
+                <option value="شراء منتج">شراء منتج</option>
+            </select>
+            <textarea id="message" placeholder="اكتب المشكلة او المواصفات"></textarea>
+            <button type="submit" class="btn-main">ابعت الطلب</button>
+        </form>
+        <p id="successMsg"></p>
+    </section>
+
+    <!-- Firebase -->
+     <!-- Firebase -->
+<script type="module">
+  // Import the functions you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyCokR2rC-iPjfSh5-C4PIZrtI5e6K9Xs00",
+    authDomain: "project1pc.firebaseapp.com",
+    projectId: "project1pc",
+    storageBucket: "project1pc.firebasestorage.app",
+    messagingSenderId: "454968143839",
+    appId: "1:454968143839:web:a0599922d5b1fed00d1e6a"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  // خلي db توصل للملف التاني
+  window.db = db;
+  window.addDoc = addDoc;
+  window.collection = collection;
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>
